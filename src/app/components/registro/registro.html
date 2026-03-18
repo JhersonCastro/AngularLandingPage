@@ -1,0 +1,142 @@
+<section id="registro" class="mt-5 bg-light py-5">
+  <div class="container">
+    <h2 class="text-center mb-4">Regístrate como nuevo usuario</h2>
+
+    <p class="lead text-center mb-4">
+      Completa tus datos para agendar citas fácilmente
+    </p>
+
+    <div class="row justify-content-center">
+      <div class="col-md-8 col-lg-6">
+
+        <form (ngSubmit)="registrar()" (input)="ocultarMensaje()">
+
+
+          <div class="mb-3">
+            <label class="form-label fw-semibold">
+              Nombre completo
+              <span class="text-danger">*</span>
+            </label>
+
+            <input
+              type="text"
+              class="form-control"
+              [(ngModel)]="nombre"
+              name="nombre"
+              (blur)="validarNombre()"
+            />
+
+            <div class="text-danger">
+              {{ errorNombre }}
+            </div>
+          </div>
+
+
+          <div class="mb-3">
+            <label class="form-label fw-semibold">
+              Correo electrónico
+              <span class="text-danger">*</span>
+            </label>
+
+            <input
+              type="email"
+              class="form-control"
+              [(ngModel)]="email"
+              name="email"
+              (blur)="validarEmail()"
+            />
+
+            <div class="text-danger">
+              {{ errorEmail }}
+            </div>
+          </div>
+
+
+          <div class="mb-3">
+            <label class="form-label fw-semibold">
+              Contraseña
+              <span class="text-danger">*</span>
+            </label>
+
+            <input
+              type="password"
+              class="form-control"
+              [(ngModel)]="password"
+              name="password"
+              (blur)="validarPassword()"
+            />
+
+            <div class="form-text">
+              Mínimo 6 caracteres
+            </div>
+
+            <div class="text-danger">
+              {{ errorPassword }}
+            </div>
+          </div>
+
+
+          <div class="mb-3">
+            <label class="form-label fw-semibold">
+              Confirmar contraseña
+              <span class="text-danger">*</span>
+            </label>
+
+            <input
+              type="password"
+              class="form-control"
+              [(ngModel)]="confirmPassword"
+              name="confirmPassword"
+              (blur)="validarConfirm()"
+            />
+
+            <div class="text-danger">
+              {{ errorConfirm }}
+            </div>
+          </div>
+
+          <!-- Términos -->
+
+          <div class="mb-3 form-check">
+            <input
+              type="checkbox"
+              class="form-check-input"
+              [(ngModel)]="terminos"
+              name="terminos"
+              (change)="validarTerminos()"
+            />
+
+            <label class="form-check-label">
+              Acepto los términos y condiciones
+            </label>
+
+            <div class="text-danger">
+              {{ errorTerminos }}
+            </div>
+          </div>
+
+
+          <div class="d-flex justify-content-start gap-2">
+            <button type="submit" class="btn btn-primary">
+              Registrarse
+            </button>
+
+            <button type="reset" class="btn btn-outline-secondary">
+              Limpiar
+            </button>
+          </div>
+
+        </form>
+
+
+        <div
+          *ngIf="mostrarExito"
+          class="alert alert-success mt-4"
+        >
+          ¡Registro exitoso! (simulación)
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>

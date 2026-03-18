@@ -1,0 +1,29 @@
+<div class="card h-100 shadow-sm">
+
+  <img 
+    [src]="imagen"
+    class="card-img-top"
+    [alt]="nombre"
+  >
+
+  <div class="card-body d-flex flex-column">
+
+    <h4 class="card-title fw-bold">
+      {{nombre}}
+    </h4>
+
+    <p class="card-text small text-muted">
+      {{especialidad}}
+    </p>
+
+    <p class="card-text small flex-grow-1">
+      "{{frase}}"
+    </p>
+
+    <button class="btn btn-primary btn-sm w-100 mt-auto">
+      Agendar cita
+    </button>
+
+  </div>
+
+</div>
