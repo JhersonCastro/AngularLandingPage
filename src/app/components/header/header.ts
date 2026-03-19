@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
   styleUrl: './header.css',
   standalone: true,
 })
-export class Header {}
+export class Header {
+
+  @Input() titulo = "";
+}
